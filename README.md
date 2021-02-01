@@ -98,7 +98,7 @@ In order to first find transition probability, we read the given ground truth fr
 <p align="center">
  <img src="https://user-images.githubusercontent.com/67504821/106423498-ab8d7f00-64b4-11eb-9163-7029188ba24a.png"/>
     <br>
-    <em>Figure 3 : Alpha Value Influence.</em>
+    <em>Figure 4 : Comparison of Selected model, (Left) structure with low acc area highlighted in red. (Right) r26 and r9 illustration.</em>
 </p>
 
 
@@ -110,9 +110,11 @@ From this, shows the reason for selecting the right order of iteration is crucia
 
 This further leads to emission probability table, built by children of a given node, see Figure 5 for room 9 as an example.
 
-<img src="https://user-images.githubusercontent.com/67504821/106423734-248cd680-64b5-11eb-85b0-5f14f3c4462d.png" width="150">
-
-_Figure 5: Bayesian Network for Emission._
+<p align="center">
+ <img src="https://user-images.githubusercontent.com/67504821/106423734-248cd680-64b5-11eb-85b0-5f14f3c4462d.png" width="150"/>
+    <br>
+    <em>Figure 5: Bayesian Network for Emission.</em>
+</p>
 
 The Pseudo code for Inference is as follow:
 
