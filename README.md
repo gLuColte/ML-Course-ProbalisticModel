@@ -49,6 +49,12 @@ On the other hand, door sensor is a special case, as it locates in between 2 are
 
 ![](https://user-images.githubusercontent.com/67504821/106423222-230ede80-64b4-11eb-91b5-df0f78731634.png)
 
+_Figure 1: a) Example of HMM ., b) Illustration of HMM on given Problem, c) Venn Diagram Illustration._
+
+https://user-images.githubusercontent.com/67504821/106423348-623d2f80-64b4-11eb-9cd2-1f2c8a81b42b.png
+
+_Figure 2: Implementation Structure._
+
 We also taken a look at the layout, where r10-11 and r17-r20 do not have enough sensors to rely on, considering how dense the rooms located next to one another. On the other hand, bottom left corner provides a good spread of sensor and rooms, given slight wider area.
 
 We also taken into consideration that people can not travel more than 2 rooms away, except for certain area that is specified.
@@ -78,20 +84,21 @@ In order to first find transition probability, we read the given ground truth fr
 | False | True | 0.232317 |
 | False | False | 0.314559 |
 
-![](RackMultipart20210201-4-1wmdy26_html_2938f204904d7e96.png)
+![](https://user-images.githubusercontent.com/67504821/106423433-8b5dc000-64b4-11eb-963d-82459cfacfda.png)
 
 _Figure 3 : Alpha Value Influence._
 
 Figure 2 illustration the involving overall iteration layers, and the order for iteration is from left to right and top to bottom. Solid and dashed lines represent influence, in other words, we consider whether there is a change in state of connected rooms under the same time frame:
 
-![](RackMultipart20210201-4-1wmdy26_html_d8333676d5ee57c8.gif)
+![](https://user-images.githubusercontent.com/67504821/106423498-ab8d7f00-64b4-11eb-9163-7029188ba24a.png)
+
 As an example, State of t for Room 9 takes into account the change in &#39;people&#39; of Room 5 under state of t and t-1.
 
 From this, shows the reason for selecting the right order of iteration is crucial and is carefully considered when constructing Figure 2, the aforementioned reliability of different sensors and layout of the graph.
 
 This further leads to emission probability table, built by children of a given node, see Figure 5 for room 9 as an example.
 
-![](RackMultipart20210201-4-1wmdy26_html_2975dd8c4b1dd7e2.png)
+![](https://user-images.githubusercontent.com/67504821/106423734-248cd680-64b5-11eb-85b0-5f14f3c4462d.png)
 
 _Figure 5: Bayesian Network for Emission._
 
