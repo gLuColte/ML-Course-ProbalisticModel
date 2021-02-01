@@ -98,7 +98,7 @@ From this, shows the reason for selecting the right order of iteration is crucia
 
 This further leads to emission probability table, built by children of a given node, see Figure 5 for room 9 as an example.
 
-<img src="https://user-images.githubusercontent.com/67504821/106423734-248cd680-64b5-11eb-85b0-5f14f3c4462d.png" width="300">
+<img src="https://user-images.githubusercontent.com/67504821/106423734-248cd680-64b5-11eb-85b0-5f14f3c4462d.png" width="150">
 
 _Figure 5: Bayesian Network for Emission._
 
