@@ -47,13 +47,17 @@ Reliable Sensor is by around 5-8% more accurate in comparison to unreliable sens
 
 On the other hand, door sensor is a special case, as it locates in between 2 areas. The accuracy shows even inferior than unreliable sensor, especially Door Sensor 3 and 1 consist of high false negatives.
 
-![](https://user-images.githubusercontent.com/67504821/106423222-230ede80-64b4-11eb-91b5-df0f78731634.png)
+<p align="center">
+ <img src="https://user-images.githubusercontent.com/67504821/106423222-230ede80-64b4-11eb-91b5-df0f78731634.png"/>
+    <br>
+    <em>Figure 1: a) Example of HMM ., b) Illustration of HMM on given Problem, c) Venn Diagram Illustration.</em>
+</p>
 
-_Figure 1: a) Example of HMM ., b) Illustration of HMM on given Problem, c) Venn Diagram Illustration._
-
-![](https://user-images.githubusercontent.com/67504821/106423348-623d2f80-64b4-11eb-9cd2-1f2c8a81b42b.png)
-
-_Figure 2: Implementation Structure._
+<p align="center">
+ <img src="https://user-images.githubusercontent.com/67504821/106423348-623d2f80-64b4-11eb-9cd2-1f2c8a81b42b.png"/>
+    <br>
+    <em>Figure 2: Implementation Structure.</em>
+</p>
 
 We also taken a look at the layout, where r10-11 and r17-r20 do not have enough sensors to rely on, considering how dense the rooms located next to one another. On the other hand, bottom left corner provides a good spread of sensor and rooms, given slight wider area.
 
@@ -84,13 +88,21 @@ In order to first find transition probability, we read the given ground truth fr
 | False | True | 0.232317 |
 | False | False | 0.314559 |
 
-<img src="https://user-images.githubusercontent.com/67504821/106423433-8b5dc000-64b4-11eb-963d-82459cfacfda.png" width="300">
+<p align="center">
+ <img src="https://user-images.githubusercontent.com/67504821/106423433-8b5dc000-64b4-11eb-963d-82459cfacfda.png" width="300"/>
+    <br>
+    <em>Figure 3 : Alpha Value Influence.</em>
+</p>
 
-_Figure 3 : Alpha Value Influence._
+
+<p align="center">
+ <img src="https://user-images.githubusercontent.com/67504821/106423498-ab8d7f00-64b4-11eb-9163-7029188ba24a.png"/>
+    <br>
+    <em>Figure 3 : Alpha Value Influence.</em>
+</p>
+
 
 Figure 2 illustration the involving overall iteration layers, and the order for iteration is from left to right and top to bottom. Solid and dashed lines represent influence, in other words, we consider whether there is a change in state of connected rooms under the same time frame:
-
-![](https://user-images.githubusercontent.com/67504821/106423498-ab8d7f00-64b4-11eb-9163-7029188ba24a.png)
 
 As an example, State of t for Room 9 takes into account the change in &#39;people&#39; of Room 5 under state of t and t-1.
 
