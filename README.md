@@ -51,7 +51,7 @@ On the other hand, door sensor is a special case, as it locates in between 2 are
 
 _Figure 1: a) Example of HMM ., b) Illustration of HMM on given Problem, c) Venn Diagram Illustration._
 
-https://user-images.githubusercontent.com/67504821/106423348-623d2f80-64b4-11eb-9cd2-1f2c8a81b42b.png
+![](https://user-images.githubusercontent.com/67504821/106423348-623d2f80-64b4-11eb-9cd2-1f2c8a81b42b.png)
 
 _Figure 2: Implementation Structure._
 
@@ -84,7 +84,7 @@ In order to first find transition probability, we read the given ground truth fr
 | False | True | 0.232317 |
 | False | False | 0.314559 |
 
-![](https://user-images.githubusercontent.com/67504821/106423433-8b5dc000-64b4-11eb-963d-82459cfacfda.png)
+<img src="https://user-images.githubusercontent.com/67504821/106423433-8b5dc000-64b4-11eb-963d-82459cfacfda.png" width="300">
 
 _Figure 3 : Alpha Value Influence._
 
