@@ -98,52 +98,37 @@ From this, shows the reason for selecting the right order of iteration is crucia
 
 This further leads to emission probability table, built by children of a given node, see Figure 5 for room 9 as an example.
 
-![](https://user-images.githubusercontent.com/67504821/106423734-248cd680-64b5-11eb-85b0-5f14f3c4462d.png)
+<img src="https://user-images.githubusercontent.com/67504821/106423734-248cd680-64b5-11eb-85b0-5f14f3c4462d.png" width="300">
 
 _Figure 5: Bayesian Network for Emission._
 
 The Pseudo code for Inference is as follow:
 
+```
 For rowintimestamp List:
-
-for area in iteration List:
- tables = pretrain\_model.load(area)
-
-Transition = tables[&#39;transition&#39;]
-
-Emission = tables[&#39;emission&#39;]
-
-Joint = join(Transition, Emission)
-
-Q\_evi = {}
-
-for evi in Evidence:
-
-Q\_evi[child] = (evi,)
-
-query(Joint, Q\_evi)
-
-if true = On, else off
-
+ for area in iteration List:
+  tables = pretrain\_model.load(area)
+  Transition = tables[&#39;transition&#39;]
+  Emission = tables[&#39;emission&#39;]
+  Joint = join(Transition, Emission)
+  Q\_evi = {}
+  for evi in Evidence:
+  Q\_evi[child] = (evi,)
+  query(Joint, Q\_evi)
+  if true = On, else off
 return actions\_dict
-
+```
 The complexity of the given model is roughly illustrated in the following, with respect to the above pseudo code:
-
+```
 2401 Rows Per date:
-
-41 Areas per iteration:
-
-Join requires O(d^n)
-
-d = number of values for given var
-
-(Maximum 2^4 + 3^2)
-
-n = number o variables for given area
-
-(Maximum 7)
-
-Maximum 6 Evidence.
+ 41 Areas per iteration:
+  Join requires O(d^n)
+  d = number of values for given var
+  (Maximum 2^4 + 3^2)
+  n = number o variables for given area
+  (Maximum 7)
+  Maximum 6 Evidence.
+```
 
 1. Results
 
