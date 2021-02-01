@@ -6,17 +6,17 @@
 
 Kan-Lin Lu (z3417618)
 
-1. Introduction
+#### 1. Introduction
 
 This document provides a smart building light control algorithm specifiation, where the model is built using concept of HMM, built with the given 1-day simulation data.
 
 The simulation is conducted multiple times and the mean of cost and time sits on: 87326.5 cents and 48.1 seconds.
 
-2. Related Background
+#### 2. Related Background
 
 Hidden Markov Model, HMM, is a form of Dynamic Bayesian Network, where it can be used in modelling transition of unobservable state for a given observation and previous state. An example is shown in Figure 1 a), where Low or High pressure is not observed, but condition of Rain or Dry is. Markov Assumption is also adopted in this case.
 
-3. Exploratory Analysis
+#### 3. Exploratory Analysis
 
 We first look at the robot sensors, it is observed that robot sensors are very rare, where out of 2401 single date data point, only less than 1% occurred in a given room. Even though it provides a solid and extreme accurate motion detection (Note there is a difference between motion and count of people, further explained in Method section).
 
@@ -59,7 +59,7 @@ We also taken a look at the layout, where r10-11 and r17-r20 do not have enough 
 
 We also taken into consideration that people can not travel more than 2 rooms away, except for certain area that is specified.
 
-4. Implementation and Method
+#### 4. Implementation and Method
 
 Building on the above description, we first establish the concept of predicting whether there are people or not in a given room:
 
@@ -130,13 +130,13 @@ The complexity of the given model is roughly illustrated in the following, with 
   Maximum 6 Evidence.
 ```
 
-1. Results
+#### 5. Results
 
 For our final model, we reached 87326.5 cents and 48.1 seconds averaged. We taken a deeper look into the overall model and observed that for Layer 2 and beyond, false prediction of whether there are people or not starts to propagate. Specifically, in layer 7, and high dense room area (r10-r11 and r15-21) with only a single reliable area.
 
 We discussed and considered increasing number of connections between lower layers, however trading off with efficiency, and with our specified restriction, that is no travelling more than 2 rooms away, the given structure provided the most optimal connection.
 
-1. Conclusion and Future Work
+#### 6. Conclusion and Future Work
 
 In conclusion, the proposed model provides an acceptable outcome. In future, we can further consider establishing connect for same layer nodes, or creating more variables, under emission probability table, in improving performance, e.g. count of people in groups. On the other hand it is suggested in install extra sensor in r7 and r19, which with the given layout will improve overall accuracy.
 
